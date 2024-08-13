@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e02929; /* Pentru o mai bună vizibilitate */
+}
+
+.container {
+    position: relative;
+    width: 620px; /* Lungimea laturii pătratului */
+    height: 620px; /* Lungimea laturii pătratului */
+    background-color: #050210;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.roata {
+    width: 420px; /* Diametrul roții */
+    height: 420px; /* Diametrul roții */
+    border-radius: 50%;
+    background: conic-gradient(
+        #fb5dad 0% 37%, 
+        #55fb9f 33% 70%, 
+        #b97aff 66% 100%
+        
+    );
+    position: relative;
+    animation: rotate 2s linear infinite;
+}
+
+
+
+.roata::before {
+    content: '';
+    position: absolute;
+    top: 25%; /* Poziționăm cercul interior pentru a crea senzația de gol în interiorul cercului mare */
+    left: 25%;
+    width: 50%; /* Mărimea cercului interior */
+    height: 50%; /* Mărimea cercului interior */
+    border-radius: 50%;
+    background: #050210; /* Aceeași culoare ca fundalul pentru a crea senzația de gol în interiorul cercului mare */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
